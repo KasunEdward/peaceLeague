@@ -11,3 +11,27 @@ angular.module('myApp.controllers',[])
             $translate.use(language);
         }
     })
+
+    .controller('loginCtrl', function($scope,$window) {
+
+        $scope.loginSave= function() {
+            if($scope.username == "kasun" && $scope.password == "1234"){
+                console.log("correct");
+            } else {
+                console.log("incorrect");
+                $window.alert("Invalid username or password...!!!");
+            }
+        }
+    })
+
+    .controller('numLoginCtrl', function($scope,$window) {
+
+        $scope.numLoginSave= function() {
+            if($scope.number == "1234"){
+                console.log("correct");
+            } else {
+                console.log("incorrect");
+                $window.alert("Invalid username or password...!!!");
+            }
+        }
+    });
