@@ -58,7 +58,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="langCtrl">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
@@ -70,13 +70,15 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <select class="multiple-control">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
+                        <a class="fa-font" ng-click="updateLanguage('en')" href="#">English</a>
                     </li>
+                    <li>
+                        <a class="fa-font" ng-click="updateLanguage('si')">Sinhala</a>
+                    </li>
+                    <li>
+                        <a class="fa-font" ng-click="updateLanguage('ta')">Tamil</a>
+                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -91,7 +93,6 @@
                 <hr>
                 <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-                <button ng-click="updateLanguage('si')">Lang</button>
             </div>
         </div>
     </header>
