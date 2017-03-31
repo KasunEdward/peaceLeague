@@ -35,13 +35,17 @@
     <script src="assets/js/bower_components/jquery/dist/jquery.js"></script>
     <script src="assets/js/bower_components/angular/angular.js"></script>
     <script src="assets/js/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="app/app.js"></script>
     <script src="assets/js/bower_components/angular-resource/angular-resource.js"></script>
     <script src="assets/js/bower_components/angular-route/angular-route.js"></script>
-    <script src="app/app.js"></script>
+    <script src="assets/js/angular-translate/angular-translate.js"></script>
+    <script src="assets/js/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="app/controllers.js"></script>
+
 
 </head>
 
-<body id="page-top" ng-app="myApp">
+<body id="page-top" ng-app="myApp"ng-controller="langCtrl">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -60,13 +64,18 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <select class="multiple-control">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
                     </li>
                 </ul>
             </div>
@@ -76,12 +85,13 @@
     </nav>
 
     <header>
-        <div class="header-content">
+        <div class="header-content" >
             <div class="header-content-inner">
-                <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1 id="homeHeading">{{'main page.title'|translate}}</h1>
                 <hr>
                 <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <button ng-click="updateLanguage('si')">Lang</button>
             </div>
         </div>
     </header>

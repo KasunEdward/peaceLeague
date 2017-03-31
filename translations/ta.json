@@ -1,0 +1,20 @@
+{
+  "main page":{
+    "title":"நல்வரவு",
+    "message":""
+  },
+  "event map":{
+    "title":"நிகழ்வு வரைபடம்"
+  },
+  "settings":{
+    "title":"அமைவுகள்",
+    "language" : "மொழி",
+    "about":"பற்றி"
+  },
+  "user profile":{
+    "title":"பயனர் விவரம்",
+    "organized":"ஏற்பாடு  நிகழ்வுகள்",
+    "participated":"கலந்து  நிகழ்வுகள்",
+    "upcoming":"எதிர்வரும்  நிகழ்வுகள்"
+  }
+}
