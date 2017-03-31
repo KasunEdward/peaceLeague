@@ -24,6 +24,7 @@
 
     <!-- Theme CSS -->
     <link href="css/creative.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,6 +37,7 @@
     <script src="assets/js/bower_components/angular/angular.js"></script>
     <script src="assets/js/bower_components/angular-animate/angular-animate.js"></script>
     <script src="app/app.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDG98E1KUvo6zwat07GBtHo03ZFL3F-8zE&sensor=true"></script>
     <script src="assets/js/bower_components/angular-resource/angular-resource.js"></script>
     <script src="assets/js/bower_components/angular-route/angular-route.js"></script>
     <script src="assets/js/angular-translate/angular-translate.js"></script>
@@ -100,16 +102,16 @@
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
-                </div>
-            </div>
+    <section id="about">
+        <div id="gmaps"  ng-controller="MapCtrl">
+            <!--<div class="row">-->
+                <!--<div class="col-lg-8 col-lg-offset-2 text-center">-->
+                    <!--<h2 class="section-heading">We've got what you need!</h2>-->
+                    <!--<hr class="light">-->
+                    <!--<p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>-->
+                    <!--<a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </section>
 

@@ -1,7 +1,7 @@
 /**
  * Created by Kasun Edward on 3/31/2017.
  */
-angular.module('myApp.controllers',[])
+angular.module('myApp.controllers',['cordovaGeolocationModule'])
     .controller('langCtrl',function($scope,$translate){
         $scope.language=null;
         $scope.languages=['en','si','ta'];
@@ -11,6 +11,7 @@ angular.module('myApp.controllers',[])
             $translate.use(language);
         }
     })
+
 
     .controller('loginCtrl', function($scope,$window) {
 
@@ -35,3 +36,26 @@ angular.module('myApp.controllers',[])
             }
         }
     });
+    .controller('createEventLocCtrl', function ($scope, cordovaGeolocationService) {
+        var options = {timeout: 10000, enableHighAccuracy: true};
+
+        cordovaGeolocationService.getCurrentPosition(function(position){
+
+         var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        //var latLng = new google.maps.LatLng(7.8731, 80.7718);
+
+
+        var mapOptions = {
+            center: latLng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        $scope.map = new google.maps.Map(document.getElementById("gmaps"), mapOptions);
+        },options);
+
+    }, function(error) {
+            console.log(error);
+            console.log("Could not get location");
+    })
+

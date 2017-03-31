@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/create_event.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDG98E1KUvo6zwat07GBtHo03ZFL3F-8zE&sensor=true"></script>
+
+    <script src="../assets/js/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../assets/js/bower_components/angular/angular.js"></script>
+    <script src="../assets/js/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../app/app.js"></script>
+    <script src="../assets/js/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../assets/js/bower_components/angular-route/angular-route.js"></script>
+    <script src="../assets/js/angular-translate/angular-translate.js"></script>
+    <script src="../assets/js/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="../js/cordovaGeolocationModule.js"></script>
+    <script src="../app/controllers.js"></script>
+
+</head>
+
+<body id="page-top" ng-app="myApp"ng-controller="langCtrl">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <select class="multiple-control">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content" >
+            <div class="header-content-inner">
+                <h2 style="text-align: center; margin-bottom: 30px">Create Event</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Event Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="eventName" placeholder="Event Name" class="form-control" autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Start</label>
+                                    <div class="col-sm-4">
+                                        <input id="startDate" type="text" placeholder="yyyy-mm-dd" class="form-control" >
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input id="startTime" type="text" placeholder="time" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">End</label>
+                                    <div class="col-sm-4">
+                                        <input id="endDate" type="text" placeholder="yyyy-mm-dd" class="form-control" >
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input id="endTime" type="text"placeholder="time" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Description</label>
+                                    <div class="col-sm-8">
+                                        <textarea  id="description" placeholder="Description" class="form-control" rows="5">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Location</label>
+                            <div id="gmaps"  ng-controller="createEventLocCtrl" style="height: 235px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-success btn-lg" style="float: right">Success</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+
+    <!-- Datetime picker -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/create_event.js"></script>
+
+</body>
+
+</html>
