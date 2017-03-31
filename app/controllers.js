@@ -35,7 +35,7 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
                 $window.alert("Invalid username or password...!!!");
             }
         }
-    });
+    })
     .controller('createEventLocCtrl', function ($scope, cordovaGeolocationService) {
         var options = {timeout: 10000, enableHighAccuracy: true};
 
@@ -57,5 +57,5 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
     }, function(error) {
             console.log(error);
             console.log("Could not get location");
-    })
+    });
 
