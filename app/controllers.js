@@ -11,8 +11,16 @@ angular.module('myApp.controllers',[])
             $translate.use(language);
         }
     })
-    .controller('MapCtrl', function ($scope,$translate) {
+    .controller('MapCtrl', function ($scope,$translate,$http) {
         //$translate.use($rootScope.language);
+        $http({
+            method: 'POST',
+            url: 'api/data/read.php'
+        }).then(function successCallback(response) {
+            console.log("Success");
+        }, function errorCallback(response) {
+           console.log(response);
+        });
         var options = {timeout: 10000, enableHighAccuracy: true};
 
         //$cordovaGeolocation.getCurrentPosition(options).then(function(position){
