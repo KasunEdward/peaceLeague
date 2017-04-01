@@ -23,7 +23,9 @@
     "event_name" : "ඉසව් නම",
     "start" : "ආරම්භය",
     "end" : "අවසානය",
-    "description" : "ඉසව් විස්තරය"
+    "description" : "ඉසව් විස්තරය",
+    "location" : "ස්ථානය",
+    "create" : "සාදන්න"
   }
 
 }

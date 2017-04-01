@@ -24,7 +24,9 @@
     "event_name" : "Event Name",
     "start" : "Start",
     "end" : "End",
-    "description" : "Description"
+    "description" : "Description",
+    "location" : "Location",
+    "create" : "Create"
   }
 
 }
