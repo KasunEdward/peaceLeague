@@ -73,6 +73,7 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
             zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+        
 
         $scope.map = new google.maps.Map(document.getElementById("gmaps"), mapOptions);
 
