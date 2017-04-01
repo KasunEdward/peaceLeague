@@ -57,5 +57,28 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
     }, function(error) {
             console.log(error);
             console.log("Could not get location");
+    })
+    .controller('MapCtrl', function ($scope,$translate) {
+        //$translate.use($rootScope.language);
+        var options = {timeout: 10000, enableHighAccuracy: true};
+
+        //$cordovaGeolocation.getCurrentPosition(options).then(function(position){
+
+        //  var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        var latLng = new google.maps.LatLng(7.8731, 80.7718);
+
+
+        var mapOptions = {
+            center: latLng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        $scope.map = new google.maps.Map(document.getElementById("gmaps"), mapOptions);
+
+    }, function(error){
+        console.log(error);
+        console.log("Could not get location");
     });
+
 
