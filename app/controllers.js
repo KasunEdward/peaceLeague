@@ -46,6 +46,8 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
         cordovaGeolocationService.getCurrentPosition(function(position){
 
          var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            console.log(latLng.lat());
+            console.log(latLng.lng());
         //var latLng = new google.maps.LatLng(7.8731, 80.7718);
 
 
@@ -68,7 +70,29 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
                 map: map,
                 draggable : true
             });
+            angular.element("#lat").val(latLng.lat());
+            angular.element("#lng").val(latLng.lng());
         }
+        }, function(error){
+            var latLng = new google.maps.LatLng(6.9176, 79.8633);
+            var mapOptions = {
+                center: latLng,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            $scope.map = new google.maps.Map(document.getElementById("gmaps"), mapOptions);
+            $scope.create_event_loc = new google.maps.Marker();
+
+            $scope.map.addListener('click', function(e) {
+                addMarker(e.latLng, $scope.map);
+            });
+            function addMarker(latLng, map){
+                $scope.create_event_loc.setMap(null);
+                $scope.create_event_loc = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                });
+            }
         },options);
 
     }, function(error) {
@@ -124,6 +148,31 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
     }, function(error){
         console.log(error);
         console.log("Could not get location");
+    })
+
+    .controller('createEventCtrl', function ($scope,$http) {
+        $scope.eventData = {
+            "eventName" : "",
+            "startDate" : "",
+            "startTime" : "",
+            "endDate" : "",
+            "endTime" : "",
+            "lat" : "",
+            "lng" : "",
+            "description" : ""
+        }
+
+        $scope.createEvent = function(){
+            var inputData = $scope.eventData;
+            inputData.startDate = angular.element('#startDate').val();
+            inputData.startTime = angular.element('#startTime').val();
+            inputData.endDate = angular.element('#endDate').val();
+            inputData.endTime = angular.element('#endTime').val();
+            inputData.lat = angular.element('#lat').val();
+            inputData.lng = angular.element('#lng').val();
+            console.log($scope);
+            console.log(inputData);
+        }
     });
 
 
