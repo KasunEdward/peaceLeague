@@ -1,8 +1,9 @@
 {
   "main page":{
     "name":"Peace League",
-    "title":"Welcome",
-    "message":"This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the"
+    "title":"Welcome to the peaceLeague...!!!",
+    "message":"We are here to ensure the community bonding and contribute for the development of the country in terms of peace.",
+    "find out":"Find Out More"
 
   },
   "event map":{
@@ -24,7 +25,9 @@
     "event_name" : "Event Name",
     "start" : "Start",
     "end" : "End",
-    "description" : "Description"
+    "description" : "Description",
+    "location" : "Location",
+    "create" : "Create"
   }
 
 }

@@ -1,7 +1,9 @@
 {
   "main page":{
+    "name":"Peace League",
     "title":"நல்வரவு",
-    "message":""
+    "message":"நாம் சமூகத்தில் பிணைப்பு உறுதி மற்றும் அமைதி பேச்சுவார்த்தையின் அடிப்படையில் நாட்டின் வளர்ச்சிக்கு பங்களிக்க இங்கே உள்ளன.",
+    "find out":"மேலும் அறிய"
   },
   "event map":{
     "title":"நிகழ்வு வரைபடம்"
@@ -18,10 +20,12 @@
     "upcoming":"எதிர்வரும்  நிகழ்வுகள்"
   },
   "create_event":{
-    "title" : "Create Event",
-    "event_name" : "Event Name",
-    "start" : "Start",
-    "end" : "End",
-    "description" : "Description"
+    "title" : "நிகழ்வு உருவாக்கு",
+    "event_name" : "நிகழ்வு பெயர்",
+    "start" : "தொடக்கம்",
+    "end" : "முடிவு",
+    "description" : "விளக்கம்",
+    "location" : "இடம்",
+    "create" : "உருவாக்கு"
   }
 }
