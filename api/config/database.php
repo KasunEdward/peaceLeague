@@ -1,6 +1,6 @@
 <?php
 class Database{
-  private $host="192.168.8.103";
+  private $host="localhost";
   private $db_name="peacebuild";
   private $username="root";
   private $password="";

@@ -71,7 +71,7 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
             console.log(error);
             console.log("Could not get location");
     })
-    .controller('MapCtrl', function ($scope,$translate) {
+    .controller('MapCtrl', function ($scope,$translate,$http) {
         //$translate.use($rootScope.language);
         var options = {timeout: 10000, enableHighAccuracy: true};
 
@@ -90,14 +90,28 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
 
         $scope.map = new google.maps.Map(document.getElementById("gmaps"), mapOptions);
         $http({
-            method: 'GET',
-            url: '/someUrl'
+            method: 'POST',
+            url: 'api/data/read.php'
         }).then(function successCallback(response) {
-            // this callback will be called asynchronously
-            // when the response is available
+            console.log(response);
+            var num=response.data.length;
+            for(var i=0;i<num;i++){
+                console.log(response.data[i].longitude);
+                var latLng = new google.maps.LatLng(response.data[i].longitude, response.data[i].latitude);
+                var marker = new google.maps.Marker({
+                    map:$scope.map,
+                    position: latLng,
+                    title:"Hello World!"
+                });
+                marker.setMap($scope.map);
+            }
+
+
+// To add the marker to the map, call setMap()
+
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
-            // or server returns response with an error status.
+
         });
 
     }, function(error){
