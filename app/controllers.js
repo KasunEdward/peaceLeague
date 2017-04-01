@@ -173,8 +173,21 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
             inputData.endTime = angular.element('#endTime').val();
             inputData.lat = angular.element('#lat').val();
             inputData.lng = angular.element('#lng').val();
-            console.log($scope);
             console.log(inputData);
+            // Sends this header with any AJAX request
+            $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            // Send this header only in post requests. Specifies you are sending a JSON object
+            $http.defaults.headers.post['dataType'] = 'json';
+            $http({
+                url: 'http://localhost/peaceLeague/api/data/add_event.php',
+                dataType: 'json',
+                method: 'POST',
+                data: inputData
+            }).then(function(){
+                alert("Event created successfully.");
+            }, function(error){
+                console.log(error);
+            });
         }
     });
 
