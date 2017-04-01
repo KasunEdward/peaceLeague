@@ -32,6 +32,10 @@ public function readAll(){
     $stmt->execute();
     return $stmt;
 }
+
+public function addEvent(){
+        $query = "INSERT INTO ".$this->table_name." (name, description, create_user_Id, longitude, latitude) VALUES (?,?,?,?)"
+    }
   
 }
 ?>
