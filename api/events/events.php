@@ -21,7 +21,7 @@ public function readAll(){
  
     // select all query
     $query = "SELECT
-				ID, name, description
+				ID, name, description,longitude,latitude
 			FROM
 				" . $this->table_name . "
 			ORDER BY
