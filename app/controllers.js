@@ -127,14 +127,17 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
                 console.log(response.data[i].longitude);
                 var latLng = new google.maps.LatLng(response.data[i].longitude, response.data[i].latitude);
                 var infowindow = new google.maps.InfoWindow({
-                    content: contentString
+                    content: response.data[i].description
                 });
                 var marker = new google.maps.Marker({
                     map:$scope.map,
                     position: latLng,
-                    title:Response.data[i].name
+                    title:response.data[i].name
                 });
                 marker.setMap($scope.map);
+                marker.addListener('click', function() {
+                    infowindow.open($scope.map, marker);
+                });
             }
 
 
