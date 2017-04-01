@@ -52,6 +52,19 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
         };
 
         $scope.map = new google.maps.Map(document.getElementById("gmaps"), mapOptions);
+        $scope.create_event_loc = new google.maps.Marker();
+
+        $scope.map.addListener('click', function(e) {
+            addMarker(e.latLng, $scope.map);
+        });
+        function addMarker(latLng, map){
+            $scope.create_event_loc.setMap(null);
+            $scope.create_event_loc = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                draggable : true
+            });
+        }
         },options);
 
     }, function(error) {

@@ -17,6 +17,13 @@
     "organized":"සංවිධානය කරන ලද ඉසව්",
     "participated":"සහභාගී වූ ඉසව්",
     "upcoming":"ඉදිරි ඉසව්"
+  },
+  "create_event":{
+    "title" : "නව ඉසව් නිර්මාණය",
+    "event_name" : "ඉසව් නම",
+    "start" : "ආරම්භය",
+    "end" : "අවසානය",
+    "description" : "ඉසව් විස්තරය"
   }
 
 }

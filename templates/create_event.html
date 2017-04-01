@@ -55,28 +55,23 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Peace League</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="fa-font" ng-click="updateLanguage('en')" href="#">English</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="fa-font" ng-click="updateLanguage('si')" href="#">Sinhala</a>
                     </li>
                     <li>
-                        <select class="multiple-control">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
+                        <a class="fa-font" ng-click="updateLanguage('ta')" href="#">Tamil</a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +83,7 @@
     <header>
         <div class="header-content" >
             <div class="header-content-inner">
-                <h2 style="text-align: center; margin-bottom: 30px">Create Event</h2>
+                <h2 style="text-align: center; margin-bottom: 30px">{{'create_event.title'|translate}}</h2>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -104,7 +99,7 @@
                                     <div class="col-sm-4">
                                         <input id="startDate" type="text" placeholder="yyyy-mm-dd" class="form-control" >
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div id="startTimeDiv" class="col-sm-4">
                                         <input id="startTime" type="text" placeholder="time" class="form-control">
                                     </div>
                                 </div>
@@ -113,14 +108,14 @@
                                     <div class="col-sm-4">
                                         <input id="endDate" type="text" placeholder="yyyy-mm-dd" class="form-control" >
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div id="endTimeDiv" class="col-sm-4">
                                         <input id="endTime" type="text"placeholder="time" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Description</label>
                                     <div class="col-sm-8">
-                                        <textarea  id="description" placeholder="Description" class="form-control" rows="5">
+                                        <textarea  id="description" class="form-control" rows="5">
                                         </textarea>
                                     </div>
                                 </div>
@@ -128,11 +123,11 @@
                         </div>
                         <div class="col-md-6">
                             <label>Location</label>
-                            <div id="gmaps"  ng-controller="createEventLocCtrl" style="height: 235px"></div>
+                            <div id="gmaps"  ng-controller="createEventLocCtrl" style="height: 270px"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-success btn-lg" style="float: right">Success</button>
+                    <div class="row" id="btnRow">
+                        <button type="button" class="btn btn-success btn-lg" style="float: right">Create</button>
                     </div>
                 </div>
 

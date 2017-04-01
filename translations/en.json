@@ -18,6 +18,13 @@
     "organized":"Organized events",
     "participated":"Participated events",
     "upcoming":"Upcoming events"
+  },
+  "create_event":{
+    "title" : "Create Event",
+    "event_name" : "Event Name",
+    "start" : "Start",
+    "end" : "End",
+    "description" : "Description"
   }
 
 }
