@@ -17,6 +17,7 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
 
         $scope.loginSave= function() {
             if($scope.username == "kasun" && $scope.password == "1234"){
+                $window.open('home.html','_blank');
                 console.log("correct");
             } else {
                 console.log("incorrect");
@@ -28,8 +29,11 @@ angular.module('myApp.controllers',['cordovaGeolocationModule'])
     .controller('numLoginCtrl', function($scope,$window) {
 
         $scope.numLoginSave= function() {
+
             if($scope.number == "1234"){
                 console.log("correct");
+                $window.open('home.html','_blank');
+                //window.location = (window.location + 'home.html');
             } else {
                 console.log("incorrect");
                 $window.alert("Invalid username or password...!!!");
