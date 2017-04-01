@@ -1,6 +1,6 @@
 {
   "main page":{
-    "name":"Peaace League",
+    "name":"Peace League",
     "title":"Welcome",
     "message":"This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the"
 
@@ -18,6 +18,15 @@
     "organized":"Organized events",
     "participated":"Participated events",
     "upcoming":"Upcoming events"
+  },
+  "create_event":{
+    "title" : "Create Event",
+    "event_name" : "Event Name",
+    "start" : "Start",
+    "end" : "End",
+    "description" : "Description",
+    "location" : "Location",
+    "create" : "Create"
   }
 
 }

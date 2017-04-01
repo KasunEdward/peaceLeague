@@ -21,7 +21,7 @@ public function readAll(){
  
     // select all query
     $query = "SELECT
-				ID, name, description
+				ID, name, description,longitude,latitude
 			FROM
 				" . $this->table_name . "
 			ORDER BY
@@ -31,7 +31,11 @@ public function readAll(){
     // execute query
     $stmt->execute();
     return $stmt;
-}
-  
-}
+}}
+
+//public function addEvent(){
+//        $query = "INSERT INTO ".$this->table_name." (name, description, create_user_Id, longitude, latitude) VALUES (?,?,?,?)"
+//    }
+//
+//}
 ?>

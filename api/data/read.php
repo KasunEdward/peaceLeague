@@ -24,7 +24,7 @@ $data="";
     // retrieve our table contents
     // fetch() is faster than fetchAll()
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
- $row = $stmt->fetchAll();
+ $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //    json_encode("jkasun");
 echo json_encode($row);
 //        // extract row
